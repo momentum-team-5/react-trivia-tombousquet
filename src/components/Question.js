@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 
 function shuffleArray (array) {
-  // This shuffles the array in-place. It does not make a new array.
-
   for (let origLocation = array.length - 1; origLocation > 0; origLocation--) {
     const newLocation = Math.floor(Math.random() * origLocation)
     const temp = array[origLocation]
@@ -12,35 +10,35 @@ function shuffleArray (array) {
 }
 
 export default function Question (props) {
-  const { question, questionNum } = props
-
-  const [chosenAnswer, setChosenAnswer] = useState(null)
+  const { questionText, correctAnswer, incorrectAnswers, chosenAnswer, questionNum, onAnswer } = props
   const [shuffledAnswers, setShuffledAnswers] = useState([])
 
   useEffect(() => {
-    const answers = question.incorrect_answers.slice() // Copies array
-    answers.push(question.correct_answer)
+    const answers = incorrectAnswers.slice()
+    answers.push(correctAnswer)
     shuffleArray(answers)
     setShuffledAnswers(answers)
-  }, [question])
+  }, [correctAnswer, incorrectAnswers])
 
   return (
     <li className='ma3'>
       <div>
-        <strong>Question: </strong>
-        <span dangerouslySetInnerHTML={{ __html: question.question }} />
+        <strong>Question {questionNum + 1}:</strong>
+        <span dangerouslySetInnerHTML={{ __html: questionText }} />
       </div>
       <div>
         <ul>
           {shuffledAnswers.map(answer => (
-            <li key={answer}>
+            <li className='questions' key={answer}>
               <label>
                 <input
                   type='radio'
                   name={'answer-' + questionNum}
                   value={answer}
                   checked={chosenAnswer === answer}
-                  onChange={() => setChosenAnswer(answer)}
+                  onChange={() => {
+                    onAnswer(answer)
+                  }}
                 />
                 <span dangerouslySetInnerHTML={{ __html: answer }} />
               </label>

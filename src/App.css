@@ -1,3 +1,21 @@
 button:hover {
   font-weight: bolder;
 }
+
+.questions {
+  list-style-type: lower-alpha;
+  padding: 2px;
+}
+
+span {
+  margin: 5px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  padding: 5px;
+  margin: 5px;
+}

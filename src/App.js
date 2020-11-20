@@ -26,7 +26,7 @@ function App () {
 
   return (
     <div className='App'>
-      <h1 className='ma4'>Choose from any of the below categories</h1>
+      <h2 className='ma4'>Welcome! Test your knowledge on any of the below categories</h2>
       <ol>
         {categories.map((category) => (
           <li className='ma3 ba pa3 blue bg-light-yellow category' key={category.id}>
