@@ -18,6 +18,8 @@ export default function CategoryData (props) {
   if (checkAnswers) {
     return (
       <Submit
+        clearSelectedCategory={clearSelectedCategory}
+        questions={questionPacks}
         category={category}
         answers={checkAnswers}
         answerView={() => setCheckAnswers(true)}
