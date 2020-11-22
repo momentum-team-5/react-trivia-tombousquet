@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import clsx from 'clsx'
 
 function shuffleArray (array) {
   for (let origLocation = array.length - 1; origLocation > 0; origLocation--) {
@@ -10,7 +11,7 @@ function shuffleArray (array) {
 }
 
 export default function Question (props) {
-  const { questionText, correctAnswer, incorrectAnswers, chosenAnswer, questionNum, onAnswer } = props
+  const { questionText, correctAnswer, incorrectAnswers, chosenAnswer, questionNum, onAnswer, submitted } = props
   const [shuffledAnswers, setShuffledAnswers] = useState([])
 
   useEffect(() => {
@@ -29,9 +30,16 @@ export default function Question (props) {
       <div>
         <ul>
           {shuffledAnswers.map(answer => (
-            <li className='questions' key={answer}>
+
+            <li
+              className={clsx('questions', {
+                correct: submitted && answer === correctAnswer,
+                incorrect: submitted && answer !== correctAnswer && answer === chosenAnswer
+              })} key={answer}
+            >
               <label>
                 <input
+                  disabled={submitted}
                   type='radio'
                   name={'answer-' + questionNum}
                   value={answer}

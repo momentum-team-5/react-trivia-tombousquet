@@ -19,3 +19,11 @@ button {
   padding: 5px;
   margin: 5px;
 }
+
+.correct {
+  background-color: limegreen;
+}
+
+.incorrect {
+  background-color: orangered;
+}

@@ -1,3 +1,5 @@
+import Question from './Question'
+import setAnswer from './CategoryData'
 
 export default function Submit (props) {
   const { clearSelectedCategory, questions } = props
@@ -13,10 +15,6 @@ export default function Submit (props) {
     return numCorrect
   }
 
-  // const correctAnswerCount = questions.filter(
-  //   q => q.chosenAnswer === q.correct_answer
-  // ).length
-
   return (
     <div>
       <h2> Congrats! You got {sumCorrectAnswers()}/10 answers correct! </h2>
@@ -26,11 +24,19 @@ export default function Submit (props) {
         </button>
       </h4>
       <ul>
-        {/* {questions.map((question, index) => (
-
-        ))} */}
+        {questions.map((question, index) => (
+          <Question
+            questionText={question.question}
+            correctAnswer={question.correct_answer}
+            incorrectAnswers={question.incorrect_answers}
+            chosenAnswer={question.chosenAnswer}
+            questionNum={index}
+            key={index}
+            onAnswer={(answer) => setAnswer(index, answer)}
+            submitted
+          />
+        ))}
       </ul>
     </div>
-
   )
 }

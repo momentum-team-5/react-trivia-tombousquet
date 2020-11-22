@@ -20,9 +20,6 @@ export default function CategoryData (props) {
       <Submit
         clearSelectedCategory={clearSelectedCategory}
         questions={questionPacks}
-        category={category}
-        answers={checkAnswers}
-        answerView={() => setCheckAnswers(true)}
       />
     )
   }
