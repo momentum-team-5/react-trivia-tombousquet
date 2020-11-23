@@ -1,4 +1,3 @@
-/* globals fetch */
 
 import 'tachyons'
 import './App.css'
