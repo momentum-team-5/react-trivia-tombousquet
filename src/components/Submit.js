@@ -15,14 +15,14 @@ export default function Submit (props) {
     return numCorrect
   }
 
-  function submitBanner (numCorrect) {
-    if (numCorrect < 4) {
+  function submitBanner (num) {
+    if (num < 4) {
       return <h2>Maybe try another category.</h2>
-    } else if (numCorrect < 6) {
+    } else if (num < 6) {
       return <h2>Not your strongest subject</h2>
-    } else if (numCorrect < 8) {
+    } else if (num < 8) {
       return <h2>Not bad! Study a bit and come back again.</h2>
-    } else if (numCorrect < 10) {
+    } else if (num < 10) {
       return <h2>You really know your stuff</h2>
     } else {
       return <h2>Incredible!</h2>
