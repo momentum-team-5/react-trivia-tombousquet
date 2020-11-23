@@ -1,5 +1,5 @@
 button:hover {
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 .questions {
@@ -27,7 +27,7 @@ button:hover {
 }
 
 .cat-button {
-  font-weight: 600;
+  font-size: large;
   background: rgb(63, 94, 251);
   background: radial-gradient(
     circle,

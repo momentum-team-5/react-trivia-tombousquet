@@ -43,7 +43,6 @@ export default function CategoryData (props) {
       <h2> Quiz yourself on {category.name}! </h2>
       <h4>
         {' '}
-        Not the questions you were looking for?
         <button className='ma2' onClick={clearSelectedCategory}>
           Select another category
         </button>

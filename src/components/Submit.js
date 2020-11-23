@@ -15,9 +15,21 @@ export default function Submit (props) {
     return numCorrect
   }
 
+  function submitBanner (numCorrect) {
+    if (numCorrect < 6) {
+      return <h2>Maybe try another category.</h2>
+    } else if (numCorrect < 8) {
+      return <h2>Not bad! Study a bit and come back again.</h2>
+    } else if (numCorrect < 10) {
+      return <h2>You really know your stuff</h2>
+    } else {
+      return <h2>Incredible!</h2>
+    }
+  }
+
   return (
     <div>
-      <h2> Congrats! You got {sumCorrectAnswers()}/10 answers correct! </h2>
+      <h2> {submitBanner(sumCorrectAnswers())} You got {sumCorrectAnswers()}/10 answers correct! </h2>
       <h4>
         <button className='ma2' onClick={clearSelectedCategory}>
           Select another category
