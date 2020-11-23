@@ -16,8 +16,10 @@ export default function Submit (props) {
   }
 
   function submitBanner (numCorrect) {
-    if (numCorrect < 6) {
+    if (numCorrect < 4) {
       return <h2>Maybe try another category.</h2>
+    } else if (numCorrect < 6) {
+      return <h2>Not your strongest subject</h2>
     } else if (numCorrect < 8) {
       return <h2>Not bad! Study a bit and come back again.</h2>
     } else if (numCorrect < 10) {
