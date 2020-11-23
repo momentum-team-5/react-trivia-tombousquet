@@ -8,7 +8,7 @@ export default function CategoryData (props) {
   const [checkAnswers, setCheckAnswers] = useState(false)
 
   useEffect(() => {
-    fetch('https://opentdb.com/api.php?amount=10&category=' + category.id)
+    fetch('https://opentdb.com/api.php?amount=10&category=' + category.id + '&token=8225fa5bad93ffef8bfeb9e0326d39b85e6617a855512c8f87b7fbe5dd9efd2f')
       .then(response => response.json())
       .then(data => {
         setQuestionPacks(data.results)
@@ -61,11 +61,10 @@ export default function CategoryData (props) {
           />
         ))}
       </ul>
-      <div>
+      <div className='submit'>
         {' '}
-        Ready to check those answers?
-        <button type='submit' onClick={() => setCheckAnswers(!checkAnswers)}>
-          SUBMIT!
+        <button className='pa3 ma2' type='submit' onClick={() => setCheckAnswers(!checkAnswers)}>
+          Submit to check answers
         </button>
       </div>
     </div>

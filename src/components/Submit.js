@@ -18,7 +18,7 @@ export default function Submit (props) {
   return (
     <div>
       <h2> Congrats! You got {sumCorrectAnswers()}/10 answers correct! </h2>
-      <h4> Want to try again?
+      <h4>
         <button className='ma2' onClick={clearSelectedCategory}>
           Select another category
         </button>

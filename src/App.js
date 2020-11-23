@@ -26,19 +26,19 @@ function App () {
 
   return (
     <div className='App'>
-      <h2 className='ma4'>Welcome! Test your knowledge on any of the below categories</h2>
-      <ol>
+      <h1>KnowYourStuff!</h1>
+      <ul className='container'>
         {categories.map((category) => (
-          <li className='ma3 ba pa3 blue bg-light-yellow category' key={category.id}>
+          <li className='pa3 category' key={category.id}>
             <button
               onClick={() => setSelectedCategory(category)}
-              className='pl0 bw0 bg-light-yellow underline blue'
+              className='underline white cat-button'
             >
               {category.name}
             </button>
           </li>
         ))}
-      </ol>
+      </ul>
     </div>
 
   )
