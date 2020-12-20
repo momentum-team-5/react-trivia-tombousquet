@@ -1,0 +1,73 @@
+button:hover {
+  font-weight: bold;
+}
+
+.questions {
+  list-style-type: lower-alpha;
+  padding: 2px;
+}
+
+.container {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category {
+  justify-content: center;
+  text-align: center;
+  width: 200px;
+  margin: 2px;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(53, 80, 97, 1) 100%
+  );
+}
+
+.cat-button {
+  font-size: large;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(82, 114, 251, 1) 0%,
+    rgba(63, 94, 251, 1) 100%
+  );
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+span {
+  margin: 5px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  padding: 5px;
+  margin: 5px;
+}
+.submit {
+  text-align: center;
+}
+
+.correct {
+  background-color: limegreen;
+}
+
+.incorrect {
+  background-color: orangered;
+}
